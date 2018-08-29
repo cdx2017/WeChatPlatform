@@ -1,0 +1,95 @@
+:root {
+    --eye-height: 32px;
+    --left-eye-x: 50px;
+    --right-eye-x: 150px;
+}
+
+/*body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    width: 90%;
+    background-color: hsl(100, 50%, 50%)
+}*/
+
+.blob {
+    height: 150px;
+    width: 235px;
+    /*background-color: hsl(100, 50%, 80%);*/
+    position: relative;
+    border-radius: 25px;
+    box-shadow: 5px 5px 10px hsl(100, 50%, 35%);
+    cursor: pointer;
+    border: 5px solid black;
+}
+
+.blob * {
+    position: absolute;
+}
+
+.eyes {
+    top: var(--eye-height);
+    transition: 0.10s;
+}
+
+.mouth, .eye {
+    background-color: hsl(0, 0%, 25%);
+}
+
+.eye {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    transition: 0.10s;
+}
+
+.left-eye {
+    left: var(--left-eye-x);
+}
+
+.right-eye {
+    left: var(--right-eye-x);
+}
+
+.mouth {
+    top: 90px;
+    height: 20px;
+    width: 60px;
+    left: 85px;
+    border-radius: 0 0 100% 100%;
+}
+
+.blob:hover .eye {
+    height: 5px;
+    border-radius: 0;
+}
+
+.blob:hover .eyes {
+    top: 45px;
+}
+
+.blob.look-up .eyes {
+    top: calc(var(--eye-height) - 8px);
+}
+
+.blob.look-down .eyes {
+    top: calc(var(--eye-height) + 10px)
+}
+
+.blob.look-left .left-eye {
+    left: calc(var(--left-eye-x) - 10px);
+}
+
+.blob.look-left .right-eye {
+    left: calc(var(--right-eye-x) - 10px);
+}
+
+.blob.look-right .left-eye {
+    left: calc(var(--left-eye-x) + 10px);
+}
+
+.blob.look-right .right-eye {
+    left: calc(var(--right-eye-x) + 10px);
+}
